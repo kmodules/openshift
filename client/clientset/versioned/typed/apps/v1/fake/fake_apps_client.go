@@ -3,9 +3,9 @@
 package fake
 
 import (
-	v1 "github.com/pharmer/openshift/client/clientset/versioned/typed/apps/v1"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
+	v1 "kmodules.xyz/openshift/client/clientset/versioned/typed/apps/v1"
 )
 
 type FakeAppsV1 struct {

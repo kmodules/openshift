@@ -3,9 +3,9 @@
 package fake
 
 import (
-	v1 "github.com/pharmer/openshift/apis/security/v1"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	testing "k8s.io/client-go/testing"
+	v1 "kmodules.xyz/openshift/apis/security/v1"
 )
 
 // FakePodSecurityPolicySelfSubjectReviews implements PodSecurityPolicySelfSubjectReviewInterface

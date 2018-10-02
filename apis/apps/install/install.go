@@ -5,8 +5,8 @@ import (
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/kubernetes/pkg/api/legacyscheme"
 
-	appsapiv1 "github.com/pharmer/openshift/apis/apps/v1"
-	appsv1 "github.com/pharmer/openshift/apis/apps/v1"
+	appsapiv1 "kmodules.xyz/openshift/apis/apps/v1"
+	appsv1 "kmodules.xyz/openshift/apis/apps/v1"
 )
 
 func init() {

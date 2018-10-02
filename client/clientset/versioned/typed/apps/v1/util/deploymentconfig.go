@@ -4,8 +4,6 @@ import (
 	"github.com/appscode/kutil"
 	core_util "github.com/appscode/kutil/core/v1"
 	"github.com/golang/glog"
-	apps "github.com/pharmer/openshift/apis/apps/v1"
-	cs "github.com/pharmer/openshift/client/clientset/versioned"
 	"github.com/pkg/errors"
 	kerr "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -13,6 +11,8 @@ import (
 	"k8s.io/apimachinery/pkg/util/strategicpatch"
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/kubernetes"
+	apps "kmodules.xyz/openshift/apis/apps/v1"
+	cs "kmodules.xyz/openshift/client/clientset/versioned"
 )
 
 func CreateOrPatchDeploymentConfig(c cs.Interface, meta metav1.ObjectMeta, transform func(*apps.DeploymentConfig) *apps.DeploymentConfig) (*apps.DeploymentConfig, kutil.VerbType, error) {

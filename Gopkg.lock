@@ -10,15 +10,15 @@
   revision = "0499c350ad263174dc8c1e3006b2d3300ff398e6"
 
 [[projects]]
-  branch = "k-1.12"
-  digest = "1:f2c73e551db66ac7d4a003410843029696e27d53e839d2ec95a3223b5e45bed0"
+  branch = "release-9.0"
+  digest = "1:b71e69b2526c80971883275b49ffd839faa23525bbf1f76ae182c91a52e38caa"
   name = "github.com/appscode/kutil"
   packages = [
     ".",
     "core/v1",
   ]
   pruneopts = "UT"
-  revision = "a82115f7d4eef41c182965d24063bb6784d1c73c"
+  revision = "303298aa86dad096fed4c49ba117700e506eca2c"
 
 [[projects]]
   digest = "1:8eb1de8112c9924d59bf1d3e5c26f5eaa2bfc2a5fcbb92dc1c2e4546d695f277"
@@ -286,7 +286,6 @@
   version = "v2.2.1"
 
 [[projects]]
-  branch = "ac-1.12.0"
   digest = "1:910ec974550174f4ca48b9f4a3caec16b693e584c3762dc726dc0dcf28f8e318"
   name = "k8s.io/api"
   packages = [
@@ -323,8 +322,8 @@
     "storage/v1beta1",
   ]
   pruneopts = "UT"
-  revision = "99a12a82c6758e20cd528070bf8f197919296567"
-  source = "github.com/pharmer/api"
+  revision = "fd83cbc87e7632ccd8bbab63d2b673d4e0c631cc"
+  version = "kubernetes-1.12.0"
 
 [[projects]]
   branch = "ac-1.12.0"
@@ -379,7 +378,6 @@
   source = "github.com/pharmer/apimachinery"
 
 [[projects]]
-  branch = "ac-1.12.0"
   digest = "1:2d2ad2e1f39fa2e79e04a307e86c64b3a9c8c7bde15cd70afaa8459bb9344ccf"
   name = "k8s.io/client-go"
   packages = [
@@ -440,8 +438,8 @@
     "util/retry",
   ]
   pruneopts = "UT"
-  revision = "fc239b8203672f1a8a16779c2cfd1f99844df219"
-  source = "github.com/pharmer/client-go"
+  revision = "1638f8970cefaa404ff3a62950f88b08292b2696"
+  version = "v9.0.0"
 
 [[projects]]
   branch = "master"

@@ -3,8 +3,8 @@
 package apps
 
 import (
-	v1 "github.com/pharmer/openshift/client/informers/externalversions/apps/v1"
-	internalinterfaces "github.com/pharmer/openshift/client/informers/externalversions/internalinterfaces"
+	v1 "kmodules.xyz/openshift/client/informers/externalversions/apps/v1"
+	internalinterfaces "kmodules.xyz/openshift/client/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to each of this group's versions.

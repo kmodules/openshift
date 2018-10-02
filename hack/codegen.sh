@@ -3,7 +3,7 @@
 set -x
 
 GOPATH=$(go env GOPATH)
-PACKAGE_NAME=github.com/pharmer/openshift
+PACKAGE_NAME=kmodules.xyz/openshift
 REPO_ROOT="$GOPATH/src/$PACKAGE_NAME"
 DOCKER_REPO_ROOT="/go/src/$PACKAGE_NAME"
 DOCKER_CODEGEN_PKG="/go/src/k8s.io/code-generator"
@@ -15,8 +15,8 @@ docker run --rm -ti -u $(id -u):$(id -g) \
   -v "$REPO_ROOT":"$DOCKER_REPO_ROOT" \
   -w "$DOCKER_REPO_ROOT" \
   appscode/gengo:release-1.12 "$DOCKER_CODEGEN_PKG"/generate-groups.sh all \
-  github.com/pharmer/openshift/client \
-  github.com/pharmer/openshift/apis \
+  kmodules.xyz/openshift/client \
+  kmodules.xyz/openshift/apis \
   "apps:v1 security:v1" \
   --go-header-file "$DOCKER_REPO_ROOT/hack/empty.txt"
 

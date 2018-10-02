@@ -7,14 +7,14 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/pharmer/openshift/client/clientset/versioned"
-	apps "github.com/pharmer/openshift/client/informers/externalversions/apps"
-	internalinterfaces "github.com/pharmer/openshift/client/informers/externalversions/internalinterfaces"
-	security "github.com/pharmer/openshift/client/informers/externalversions/security"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
+	versioned "kmodules.xyz/openshift/client/clientset/versioned"
+	apps "kmodules.xyz/openshift/client/informers/externalversions/apps"
+	internalinterfaces "kmodules.xyz/openshift/client/informers/externalversions/internalinterfaces"
+	security "kmodules.xyz/openshift/client/informers/externalversions/security"
 )
 
 // SharedInformerOption defines the functional option type for SharedInformerFactory.

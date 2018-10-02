@@ -27,7 +27,7 @@
 
 [[constraint]]
   name = "github.com/appscode/kutil"
-  branch = "k-1.12"
+  branch = "release-9.0"
 
 [[constraint]]
   name = "github.com/gogo/protobuf"
@@ -47,8 +47,7 @@
 
 [[constraint]]
   name = "k8s.io/api"
-  branch = "ac-1.12.0"
-  source = "github.com/pharmer/api"
+  version = "kubernetes-1.12.0"
 
 [[constraint]]
   name = "k8s.io/apimachinery"
@@ -57,8 +56,7 @@
 
 [[constraint]]
   name = "k8s.io/client-go"
-  branch = "ac-1.12.0"
-  source = "github.com/pharmer/client-go"
+  version = "v9.0.0"
 
 [prune]
   go-tests = true

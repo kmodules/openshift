@@ -3,16 +3,16 @@
 package fake
 
 import (
-	clientset "github.com/pharmer/openshift/client/clientset/versioned"
-	appsv1 "github.com/pharmer/openshift/client/clientset/versioned/typed/apps/v1"
-	fakeappsv1 "github.com/pharmer/openshift/client/clientset/versioned/typed/apps/v1/fake"
-	securityv1 "github.com/pharmer/openshift/client/clientset/versioned/typed/security/v1"
-	fakesecurityv1 "github.com/pharmer/openshift/client/clientset/versioned/typed/security/v1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
 	fakediscovery "k8s.io/client-go/discovery/fake"
 	"k8s.io/client-go/testing"
+	clientset "kmodules.xyz/openshift/client/clientset/versioned"
+	appsv1 "kmodules.xyz/openshift/client/clientset/versioned/typed/apps/v1"
+	fakeappsv1 "kmodules.xyz/openshift/client/clientset/versioned/typed/apps/v1/fake"
+	securityv1 "kmodules.xyz/openshift/client/clientset/versioned/typed/security/v1"
+	fakesecurityv1 "kmodules.xyz/openshift/client/clientset/versioned/typed/security/v1/fake"
 )
 
 // NewSimpleClientset returns a clientset that will respond with the provided objects.

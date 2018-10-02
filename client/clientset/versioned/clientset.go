@@ -3,11 +3,11 @@
 package versioned
 
 import (
-	appsv1 "github.com/pharmer/openshift/client/clientset/versioned/typed/apps/v1"
-	securityv1 "github.com/pharmer/openshift/client/clientset/versioned/typed/security/v1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"
+	appsv1 "kmodules.xyz/openshift/client/clientset/versioned/typed/apps/v1"
+	securityv1 "kmodules.xyz/openshift/client/clientset/versioned/typed/security/v1"
 )
 
 type Interface interface {

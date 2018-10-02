@@ -3,8 +3,8 @@
 package security
 
 import (
-	internalinterfaces "github.com/pharmer/openshift/client/informers/externalversions/internalinterfaces"
-	v1 "github.com/pharmer/openshift/client/informers/externalversions/security/v1"
+	internalinterfaces "kmodules.xyz/openshift/client/informers/externalversions/internalinterfaces"
+	v1 "kmodules.xyz/openshift/client/informers/externalversions/security/v1"
 )
 
 // Interface provides access to each of this group's versions.

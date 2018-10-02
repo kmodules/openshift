@@ -3,10 +3,10 @@
 package v1
 
 import (
-	v1 "github.com/pharmer/openshift/apis/apps/v1"
-	"github.com/pharmer/openshift/client/clientset/versioned/scheme"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	rest "k8s.io/client-go/rest"
+	v1 "kmodules.xyz/openshift/apis/apps/v1"
+	"kmodules.xyz/openshift/client/clientset/versioned/scheme"
 )
 
 type AppsV1Interface interface {

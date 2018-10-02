@@ -3,12 +3,12 @@
 package v1
 
 import (
-	v1 "github.com/pharmer/openshift/apis/security/v1"
-	scheme "github.com/pharmer/openshift/client/clientset/versioned/scheme"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
 	rest "k8s.io/client-go/rest"
+	v1 "kmodules.xyz/openshift/apis/security/v1"
+	scheme "kmodules.xyz/openshift/client/clientset/versioned/scheme"
 )
 
 // SecurityContextConstraintsGetter has a method to return a SecurityContextConstraintsInterface.

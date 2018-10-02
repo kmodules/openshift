@@ -3,7 +3,7 @@
 package v1
 
 import (
-	internalinterfaces "github.com/pharmer/openshift/client/informers/externalversions/internalinterfaces"
+	internalinterfaces "kmodules.xyz/openshift/client/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.
