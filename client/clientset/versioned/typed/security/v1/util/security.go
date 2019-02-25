@@ -1,7 +1,6 @@
 package util
 
 import (
-	"github.com/appscode/kutil"
 	"github.com/golang/glog"
 	"github.com/pkg/errors"
 	kerr "k8s.io/apimachinery/pkg/api/errors"
@@ -9,6 +8,7 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/apimachinery/pkg/util/strategicpatch"
 	"k8s.io/apimachinery/pkg/util/wait"
+	kutil "kmodules.xyz/client-go"
 	api "kmodules.xyz/openshift/apis/security/v1"
 	cs "kmodules.xyz/openshift/client/clientset/versioned"
 )

@@ -96,7 +96,7 @@ func (c *FakeSecurityContextConstraints) DeleteCollection(options *v1.DeleteOpti
 // Patch applies the patch and returns the patched securityContextConstraints.
 func (c *FakeSecurityContextConstraints) Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *securityv1.SecurityContextConstraints, err error) {
 	obj, err := c.Fake.
-		Invokes(testing.NewRootPatchSubresourceAction(securitycontextconstraintsResource, name, data, subresources...), &securityv1.SecurityContextConstraints{})
+		Invokes(testing.NewRootPatchSubresourceAction(securitycontextconstraintsResource, name, pt, data, subresources...), &securityv1.SecurityContextConstraints{})
 	if obj == nil {
 		return nil, err
 	}
