@@ -96,7 +96,7 @@ func (c *FakeRangeAllocations) DeleteCollection(options *v1.DeleteOptions, listO
 // Patch applies the patch and returns the patched rangeAllocation.
 func (c *FakeRangeAllocations) Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *securityv1.RangeAllocation, err error) {
 	obj, err := c.Fake.
-		Invokes(testing.NewRootPatchSubresourceAction(rangeallocationsResource, name, data, subresources...), &securityv1.RangeAllocation{})
+		Invokes(testing.NewRootPatchSubresourceAction(rangeallocationsResource, name, pt, data, subresources...), &securityv1.RangeAllocation{})
 	if obj == nil {
 		return nil, err
 	}
