@@ -1,3 +1,7 @@
+[![Go Report Card](https://goreportcard.com/badge/kmodules/openshift "Go Report Card")](https://goreportcard.com/report/kmodules/openshift)
+[![GoDoc](https://godoc.org/kmodules.xyz/openshift?status.svg "GoDoc")](https://godoc.org/kmodules.xyz/openshift)
+[![Build Status](https://travis-ci.org/kmodules/openshift.svg?branch=master)](https://travis-ci.org/kmodules/openshift)
+
 # openshift
 
 [OpenShift](https://www.openshift.com) comes with some custom API types, eg, DeploymentConfig and SecurityContextConstraints. To support these API types in AppsCode projects, we have to depend on the following additional projects.
