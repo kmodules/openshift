@@ -62,17 +62,7 @@ func (c *Clientset) AppsV1() appsv1.AppsV1Interface {
 	return &fakeappsv1.FakeAppsV1{Fake: &c.Fake}
 }
 
-// Apps retrieves the AppsV1Client
-func (c *Clientset) Apps() appsv1.AppsV1Interface {
-	return &fakeappsv1.FakeAppsV1{Fake: &c.Fake}
-}
-
 // SecurityV1 retrieves the SecurityV1Client
 func (c *Clientset) SecurityV1() securityv1.SecurityV1Interface {
-	return &fakesecurityv1.FakeSecurityV1{Fake: &c.Fake}
-}
-
-// Security retrieves the SecurityV1Client
-func (c *Clientset) Security() securityv1.SecurityV1Interface {
 	return &fakesecurityv1.FakeSecurityV1{Fake: &c.Fake}
 }
