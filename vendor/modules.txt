@@ -220,7 +220,7 @@ k8s.io/client-go/util/connrotation
 k8s.io/client-go/util/flowcontrol
 k8s.io/client-go/util/keyutil
 k8s.io/client-go/util/retry
-# k8s.io/klog v0.4.0 => k8s.io/klog v0.3.0
+# k8s.io/klog v0.4.0 => k8s.io/klog v0.4.0
 k8s.io/klog
 # k8s.io/kube-openapi v0.0.0-20190816220812-743ec37842bf => k8s.io/kube-openapi v0.0.0-20190816220812-743ec37842bf
 k8s.io/kube-openapi/pkg/util/proto
@@ -230,7 +230,7 @@ k8s.io/kubernetes/pkg/api/legacyscheme
 k8s.io/utils/buffer
 k8s.io/utils/integer
 k8s.io/utils/trace
-# kmodules.xyz/client-go v0.0.0-20191119114815-0623bbd17a44
+# kmodules.xyz/client-go v0.0.0-20191127054604-26981530831d
 kmodules.xyz/client-go
 kmodules.xyz/client-go/core/v1
 # sigs.k8s.io/yaml v1.1.0 => sigs.k8s.io/yaml v1.1.0
