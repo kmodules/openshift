@@ -1,9 +1,10 @@
 package apps
 
 import (
+	appsv1 "kmodules.xyz/openshift/apis/apps/v1"
+
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	appsv1 "kmodules.xyz/openshift/apis/apps/v1"
 )
 
 const (
