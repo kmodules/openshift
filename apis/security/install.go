@@ -1,10 +1,10 @@
 package security
 
 import (
+	securityv1 "kmodules.xyz/openshift/apis/security/v1"
+
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-
-	securityv1 "kmodules.xyz/openshift/apis/security/v1"
 )
 
 const (

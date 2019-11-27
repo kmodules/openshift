@@ -3,6 +3,8 @@
 package fake
 
 import (
+	appsv1 "kmodules.xyz/openshift/apis/apps/v1"
+
 	v1beta1 "k8s.io/api/extensions/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
@@ -10,7 +12,6 @@ import (
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
 	testing "k8s.io/client-go/testing"
-	appsv1 "kmodules.xyz/openshift/apis/apps/v1"
 )
 
 // FakeDeploymentConfigs implements DeploymentConfigInterface

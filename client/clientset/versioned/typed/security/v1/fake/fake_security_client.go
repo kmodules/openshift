@@ -3,9 +3,10 @@
 package fake
 
 import (
+	v1 "kmodules.xyz/openshift/client/clientset/versioned/typed/security/v1"
+
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
-	v1 "kmodules.xyz/openshift/client/clientset/versioned/typed/security/v1"
 )
 
 type FakeSecurityV1 struct {
