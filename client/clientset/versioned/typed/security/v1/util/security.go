@@ -1,6 +1,8 @@
 package util
 
 import (
+	"context"
+
 	kutil "kmodules.xyz/client-go"
 	api "kmodules.xyz/openshift/apis/security/v1"
 	cs "kmodules.xyz/openshift/client/clientset/versioned"
@@ -14,29 +16,29 @@ import (
 	"k8s.io/apimachinery/pkg/util/wait"
 )
 
-func CreateOrPatchSecurityContextConstraints(c cs.Interface, meta metav1.ObjectMeta, transform func(*api.SecurityContextConstraints) *api.SecurityContextConstraints) (*api.SecurityContextConstraints, kutil.VerbType, error) {
-	cur, err := c.SecurityV1().SecurityContextConstraints().Get(meta.Name, metav1.GetOptions{})
+func CreateOrPatchSecurityContextConstraints(ctx context.Context, c cs.Interface, meta metav1.ObjectMeta, transform func(*api.SecurityContextConstraints) *api.SecurityContextConstraints) (*api.SecurityContextConstraints, kutil.VerbType, error) {
+	cur, err := c.SecurityV1().SecurityContextConstraints().Get(ctx, meta.Name, metav1.GetOptions{})
 	if kerr.IsNotFound(err) {
 		glog.V(3).Infof("Creating SecurityContextConstraints %s/%s.", meta.Namespace, meta.Name)
-		out, err := c.SecurityV1().SecurityContextConstraints().Create(transform(&api.SecurityContextConstraints{
+		out, err := c.SecurityV1().SecurityContextConstraints().Create(ctx, transform(&api.SecurityContextConstraints{
 			TypeMeta: metav1.TypeMeta{
 				Kind:       "SecurityContextConstraints",
 				APIVersion: api.SchemeGroupVersion.String(),
 			},
 			ObjectMeta: meta,
-		}))
+		}), metav1.CreateOptions{})
 		return out, kutil.VerbCreated, err
 	} else if err != nil {
 		return nil, kutil.VerbUnchanged, err
 	}
-	return PatchSecurityContextConstraints(c, cur, transform)
+	return PatchSecurityContextConstraints(ctx, c, cur, transform)
 }
 
-func PatchSecurityContextConstraints(c cs.Interface, cur *api.SecurityContextConstraints, transform func(*api.SecurityContextConstraints) *api.SecurityContextConstraints) (*api.SecurityContextConstraints, kutil.VerbType, error) {
-	return PatchSecurityContextConstraintsObject(c, cur, transform(cur.DeepCopy()))
+func PatchSecurityContextConstraints(ctx context.Context, c cs.Interface, cur *api.SecurityContextConstraints, transform func(*api.SecurityContextConstraints) *api.SecurityContextConstraints) (*api.SecurityContextConstraints, kutil.VerbType, error) {
+	return PatchSecurityContextConstraintsObject(ctx, c, cur, transform(cur.DeepCopy()))
 }
 
-func PatchSecurityContextConstraintsObject(c cs.Interface, cur, mod *api.SecurityContextConstraints) (*api.SecurityContextConstraints, kutil.VerbType, error) {
+func PatchSecurityContextConstraintsObject(ctx context.Context, c cs.Interface, cur, mod *api.SecurityContextConstraints) (*api.SecurityContextConstraints, kutil.VerbType, error) {
 	curJson, err := json.Marshal(cur)
 	if err != nil {
 		return nil, kutil.VerbUnchanged, err
@@ -55,19 +57,19 @@ func PatchSecurityContextConstraintsObject(c cs.Interface, cur, mod *api.Securit
 		return cur, kutil.VerbUnchanged, nil
 	}
 	glog.V(3).Infof("Patching SecurityContextConstraints %s with %s.", cur.Name, string(patch))
-	out, err := c.SecurityV1().SecurityContextConstraints().Patch(cur.Name, types.StrategicMergePatchType, patch)
+	out, err := c.SecurityV1().SecurityContextConstraints().Patch(ctx, cur.Name, types.StrategicMergePatchType, patch, metav1.PatchOptions{})
 	return out, kutil.VerbPatched, err
 }
 
-func TryUpdateSecurityContextConstraints(c cs.Interface, meta metav1.ObjectMeta, transform func(*api.SecurityContextConstraints) *api.SecurityContextConstraints) (result *api.SecurityContextConstraints, err error) {
+func TryUpdateSecurityContextConstraints(ctx context.Context, c cs.Interface, meta metav1.ObjectMeta, transform func(*api.SecurityContextConstraints) *api.SecurityContextConstraints) (result *api.SecurityContextConstraints, err error) {
 	attempt := 0
 	err = wait.PollImmediate(kutil.RetryInterval, kutil.RetryTimeout, func() (bool, error) {
 		attempt++
-		cur, e2 := c.SecurityV1().SecurityContextConstraints().Get(meta.Name, metav1.GetOptions{})
+		cur, e2 := c.SecurityV1().SecurityContextConstraints().Get(ctx, meta.Name, metav1.GetOptions{})
 		if kerr.IsNotFound(e2) {
 			return false, e2
 		} else if e2 == nil {
-			result, e2 = c.SecurityV1().SecurityContextConstraints().Update(transform(cur.DeepCopy()))
+			result, e2 = c.SecurityV1().SecurityContextConstraints().Update(ctx, transform(cur.DeepCopy()), metav1.UpdateOptions{})
 			return e2 == nil, nil
 		}
 		glog.Errorf("Attempt %d failed to update SecurityContextConstraints %s due to %v.", attempt, cur.Name, e2)
