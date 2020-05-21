@@ -255,7 +255,7 @@ k8s.io/kubernetes/pkg/api/legacyscheme
 k8s.io/utils/buffer
 k8s.io/utils/integer
 k8s.io/utils/trace
-# kmodules.xyz/client-go v0.0.0-20200521013016-a4d5e506e1db
+# kmodules.xyz/client-go v0.0.0-20200521065424-173e32c78a20
 kmodules.xyz/client-go
 kmodules.xyz/client-go/core/v1
 kmodules.xyz/client-go/meta

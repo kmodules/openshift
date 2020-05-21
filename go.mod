@@ -11,7 +11,7 @@ require (
 	k8s.io/apimachinery v0.18.3
 	k8s.io/client-go v0.18.3
 	k8s.io/kubernetes v1.18.3
-	kmodules.xyz/client-go v0.0.0-20200521013016-a4d5e506e1db
+	kmodules.xyz/client-go v0.0.0-20200521065424-173e32c78a20
 )
 
 replace (
