@@ -4,16 +4,12 @@ go 1.12
 
 require (
 	github.com/gogo/protobuf v1.3.1
+	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
+	github.com/json-iterator/go v1.1.10
+	github.com/pkg/errors v0.8.1
 	k8s.io/api v0.18.9
-	k8s.io/apiextensions-apiserver v0.18.9
 	k8s.io/apimachinery v0.18.9
-	k8s.io/apiserver v0.18.9
-	k8s.io/cli-runtime v0.18.9
 	k8s.io/client-go v0.18.9
-	k8s.io/cloud-provider v0.18.9
-	k8s.io/component-base v0.18.9
-	k8s.io/kube-aggregator v0.18.9
-	k8s.io/kubectl v0.18.9
 	k8s.io/kubernetes v1.18.9
 	kmodules.xyz/client-go v0.0.0-20200922200830-63d86b6e5b63
 )
