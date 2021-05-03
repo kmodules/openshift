@@ -340,11 +340,12 @@ k8s.io/kube-openapi/pkg/util/proto
 # k8s.io/kubernetes v1.21.0 => github.com/kmodules/kubernetes v1.22.0-alpha.0.0.20210427080452-22d2e66bae50
 ## explicit
 k8s.io/kubernetes/pkg/api/legacyscheme
-# k8s.io/utils v0.0.0-20201110183641-67b214c5f920 => k8s.io/utils v0.0.0-20201110183641-67b214c5f920
+# k8s.io/utils v0.0.0-20210111153108-fddb29f9d009 => k8s.io/utils v0.0.0-20201110183641-67b214c5f920
+## explicit
 k8s.io/utils/buffer
 k8s.io/utils/integer
 k8s.io/utils/trace
-# kmodules.xyz/client-go v0.0.0-20210502215034-b73197efff3f
+# kmodules.xyz/client-go v0.0.0-20210503064222-c8c59295a3a5
 ## explicit
 kmodules.xyz/client-go
 kmodules.xyz/client-go/core/v1
