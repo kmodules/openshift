@@ -889,8 +889,8 @@ k8s.io/sample-apiserver v0.21.0/go.mod h1:yMffYq14yQZtuVPVBGaBJ+3Scb2xHT6QeqFfk3
 k8s.io/system-validators v1.4.0/go.mod h1:bPldcLgkIUK22ALflnsXk8pvkTEndYdNuaHH6gRrl0Q=
 k8s.io/utils v0.0.0-20201110183641-67b214c5f920 h1:CbnUZsM497iRC5QMVkHwyl8s2tB3g7yaSHkYPkpgelw=
 k8s.io/utils v0.0.0-20201110183641-67b214c5f920/go.mod h1:jPW/WVKK9YHAvNhRxK0md/EJ228hCsBRufyofKtW8HA=
-kmodules.xyz/client-go v0.0.0-20210502215034-b73197efff3f h1:a0ClahgI4hrGg2VM+brfmPKjx52s8aDMHyB1b8xXpxY=
-kmodules.xyz/client-go v0.0.0-20210502215034-b73197efff3f/go.mod h1:lHHgEovuSVHCDl7pe0ZyY4VrVTtByfijZpKeLk5A1/M=
+kmodules.xyz/client-go v0.0.0-20210503064222-c8c59295a3a5 h1:4EyHIidgWmKsej6QLyHOhZXelzWB/FcEx/E+SQz9Tl0=
+kmodules.xyz/client-go v0.0.0-20210503064222-c8c59295a3a5/go.mod h1:Dg0/zImljlRXce1Nr/nr0xv2bOIVTFqRJr+AvFoYXJU=
 modernc.org/cc v1.0.0/go.mod h1:1Sk4//wdnYJiUIxnW8ddKpaOJCF37yAdqYnkxUpaYxw=
 modernc.org/golex v1.0.0/go.mod h1:b/QX9oBD/LhixY6NDh+IdGv17hgB+51fET1i2kPSmvk=
 modernc.org/mathutil v1.0.0/go.mod h1:wU0vUrJsVWBZ4P6e7xtFJEhFSNsfRLJ8H458uRjg03k=
