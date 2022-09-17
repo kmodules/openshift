@@ -21,7 +21,7 @@ BIN      := openshift
 # Produce CRDs that work back to Kubernetes 1.11 (no version conversion)
 # CRD_OPTIONS          ?= "crd:trivialVersions=true"
 # https://github.com/appscodelabs/gengo-builder
-CODE_GENERATOR_IMAGE ?= appscode/gengo:release-1.24
+CODE_GENERATOR_IMAGE ?= appscode/gengo:release-1.25
 API_GROUPS           ?= apps:v1 security:v1
 
 # This version-strategy uses git tags to set the version string

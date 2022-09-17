@@ -2,16 +2,18 @@ module kmodules.xyz/openshift
 
 go 1.18
 
+replace k8s.io/kubernetes => github.com/kmodules/kubernetes v1.26.0-alpha.0.0.20220917022409-54ac9f3f1315
+
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/json-iterator/go v1.1.12
 	github.com/pkg/errors v0.9.1
-	k8s.io/api v0.25.0-rc.1
-	k8s.io/apimachinery v0.25.0-rc.1
-	k8s.io/client-go v0.25.0-rc.1
-	k8s.io/klog/v2 v2.70.1
-	k8s.io/kubernetes v0.25.0-rc.1
-	kmodules.xyz/client-go v0.24.6-0.20220817193607-c52ad2a6e732
+	k8s.io/api v0.25.1
+	k8s.io/apimachinery v0.25.1
+	k8s.io/client-go v0.25.1
+	k8s.io/klog/v2 v2.80.1
+	k8s.io/kubernetes v0.0.0-00010101000000-000000000000
+	kmodules.xyz/client-go v0.25.0
 )
 
 require (
@@ -27,12 +29,12 @@ require (
 	github.com/go-openapi/swag v0.19.14 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/gnostic v0.5.7-v3refs // indirect
-	github.com/google/go-cmp v0.5.6 // indirect
-	github.com/google/gofuzz v1.1.0 // indirect
+	github.com/google/go-cmp v0.5.9 // indirect
+	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/mailru/easyjson v0.7.6 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mitchellh/mapstructure v1.4.1 // indirect
+	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
@@ -41,12 +43,12 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/yudai/gojsondiff v1.0.0 // indirect
 	github.com/yudai/golcs v0.0.0-20170316035057-ecda9a501e82 // indirect
-	golang.org/x/net v0.0.0-20220722155237-a158d28d115b // indirect
+	golang.org/x/net v0.0.0-20220909164309-bea034e7d591 // indirect
 	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8 // indirect
 	golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	golang.org/x/text v0.3.7 // indirect
-	golang.org/x/time v0.0.0-20220210224613-90d013bbcef8 // indirect
+	golang.org/x/time v0.0.0-20220722155302-e5dcc9cfc0b9 // indirect
 	gomodules.xyz/jsonpatch/v2 v2.2.0 // indirect
 	gomodules.xyz/mergo v0.3.13 // indirect
 	gomodules.xyz/pointer v0.1.0 // indirect
@@ -61,5 +63,3 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
-
-replace k8s.io/kubernetes => github.com/kmodules/kubernetes v1.25.0-alpha.0.0.20220817200112-cb8916070941
