@@ -21,7 +21,7 @@ BIN      := openshift
 # Produce CRDs that work back to Kubernetes 1.11 (no version conversion)
 # CRD_OPTIONS          ?= "crd:trivialVersions=true"
 # https://github.com/appscodelabs/gengo-builder
-CODE_GENERATOR_IMAGE ?= ghcr.io/appscode/gengo:release-1.25
+CODE_GENERATOR_IMAGE ?= ghcr.io/appscode/gengo:release-1.29
 API_GROUPS           ?= apps:v1 security:v1
 
 # This version-strategy uses git tags to set the version string
@@ -61,7 +61,7 @@ ARCH := $(if $(GOARCH),$(GOARCH),$(shell go env GOARCH))
 BASEIMAGE_PROD   ?= gcr.io/distroless/static-debian11
 BASEIMAGE_DBG    ?= debian:bullseye
 
-GO_VERSION       ?= 1.20
+GO_VERSION       ?= 1.21
 BUILD_IMAGE      ?= ghcr.io/appscode/golang-dev:$(GO_VERSION)
 
 OUTBIN = bin/$(OS)_$(ARCH)/$(BIN)
@@ -108,7 +108,6 @@ DOCKER_REPO_ROOT := /go/src/$(GO_PKG)/$(REPO)
 .PHONY: clientset
 clientset:
 	@docker run --rm	                                 \
-		-u $$(id -u):$$(id -g)                           \
 		-v /tmp:/.cache                                  \
 		-v $$(pwd):$(DOCKER_REPO_ROOT)                   \
 		-w $(DOCKER_REPO_ROOT)                           \

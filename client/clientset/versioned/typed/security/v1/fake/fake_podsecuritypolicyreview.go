@@ -24,7 +24,6 @@ import (
 	v1 "kmodules.xyz/openshift/apis/security/v1"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	testing "k8s.io/client-go/testing"
 )
 
@@ -34,9 +33,9 @@ type FakePodSecurityPolicyReviews struct {
 	ns   string
 }
 
-var podsecuritypolicyreviewsResource = schema.GroupVersionResource{Group: "security.openshift.io", Version: "v1", Resource: "podsecuritypolicyreviews"}
+var podsecuritypolicyreviewsResource = v1.SchemeGroupVersion.WithResource("podsecuritypolicyreviews")
 
-var podsecuritypolicyreviewsKind = schema.GroupVersionKind{Group: "security.openshift.io", Version: "v1", Kind: "PodSecurityPolicyReview"}
+var podsecuritypolicyreviewsKind = v1.SchemeGroupVersion.WithKind("PodSecurityPolicyReview")
 
 // Create takes the representation of a podSecurityPolicyReview and creates it.  Returns the server's representation of the podSecurityPolicyReview, and an error, if there is any.
 func (c *FakePodSecurityPolicyReviews) Create(ctx context.Context, podSecurityPolicyReview *v1.PodSecurityPolicyReview, opts metav1.CreateOptions) (result *v1.PodSecurityPolicyReview, err error) {
