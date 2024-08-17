@@ -61,7 +61,7 @@ ARCH := $(if $(GOARCH),$(GOARCH),$(shell go env GOARCH))
 BASEIMAGE_PROD   ?= gcr.io/distroless/static-debian11
 BASEIMAGE_DBG    ?= debian:bullseye
 
-GO_VERSION       ?= 1.21
+GO_VERSION       ?= 1.23
 BUILD_IMAGE      ?= ghcr.io/appscode/golang-dev:$(GO_VERSION)
 
 OUTBIN = bin/$(OS)_$(ARCH)/$(BIN)
@@ -108,6 +108,7 @@ DOCKER_REPO_ROOT := /go/src/$(GO_PKG)/$(REPO)
 .PHONY: clientset
 clientset:
 	@docker run --rm	                                 \
+	  -u $$(id -u):$$(id -g)                           \
 		-v /tmp:/.cache                                  \
 		-v $$(pwd):$(DOCKER_REPO_ROOT)                   \
 		-w $(DOCKER_REPO_ROOT)                           \
