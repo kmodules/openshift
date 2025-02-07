@@ -117,7 +117,6 @@ func TryUpdateSecurityContextConstraints(
 		klog.Errorf("Attempt %d failed to update SecurityContextConstraints %s due to %v.", attempt, cur.Name, e2)
 		return false, nil
 	})
-
 	if err != nil {
 		err = errors.Errorf("failed to update SecurityContextConstraints %s after %d attempts due to %v", meta.Name, attempt, err)
 	}

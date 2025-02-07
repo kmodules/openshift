@@ -119,7 +119,6 @@ func TryUpdateDeploymentConfig(
 		klog.Errorf("Attempt %d failed to update DeploymentConfig %s/%s due to %v.", attempt, cur.Namespace, cur.Name, e2)
 		return false, nil
 	})
-
 	if err != nil {
 		err = errors.Errorf("failed to update DeploymentConfig %s/%s after %d attempts due to %v", meta.Namespace, meta.Name, attempt, err)
 	}
